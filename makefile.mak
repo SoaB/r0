@@ -29,7 +29,7 @@ OBJDIR_RELEASE = obj\\Release
 DEP_RELEASE = 
 OUT_RELEASE = bin\\Release\\main.exe
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)\\demo.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)\\main.o
 
 all: release
 
@@ -46,7 +46,7 @@ release: before_release out_release after_release
 out_release: before_release $(OBJ_RELEASE) $(DEP_RELEASE)
 	$(LD) $(LIBDIR_RELEASE) -o $(OUT_RELEASE) $(OBJ_RELEASE)  $(LDFLAGS_RELEASE) -mwindows $(LIB_RELEASE)
 
-$(OBJDIR_RELEASE)\\mmain.o: main.c
+$(OBJDIR_RELEASE)\\main.o: main.c
 	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c main.c -o $(OBJDIR_RELEASE)\\main.o
 
 clean_release: 
